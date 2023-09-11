@@ -23,4 +23,4 @@ export const SUPPORTED_LANG = [
   {identifier: "Spanish", name: "Spanish" },
 ];
 
-export const OPEN_AI =  "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" ;
+export const OPEN_AI =  process.env.REACT_APP_OPEN_AI ;

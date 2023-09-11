@@ -7,6 +7,7 @@ import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import { useSelector } from "react-redux";
 import GptSearch from "./GptSearch";
+import Footer from "./Footer";
 const Browse = () => {
   const gptSearchView = useSelector((store) => store.gpt.showGptSearch);
 
@@ -21,10 +22,11 @@ const Browse = () => {
       {gptSearchView ?  <GptSearch/> : <>
       <MainContainer />
       <SecondaryContainer />
-      </> // it should be only one parent element so use react fragment
+      </>
+       // it should be only one parent element so use react fragment
        }  
       
-     
+     <Footer/>
       
     </div>
   );
