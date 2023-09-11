@@ -10,6 +10,7 @@ import { auth } from "../Utlis/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utlis/userSlice";
 import { USER_AVATAR } from "../Utlis/Constant";
+import { BG_URL } from "../Utlis/Constant";
 
 const Login = () => {
 
@@ -89,14 +90,15 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
+      <div>
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/00103100-5b45-4d4f-af32-342649f1bda5/64774cd8-5c3a-4823-a0bb-1610d6971bd4/IN-en-20230821-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+        className=" fixed h-screen md:h-auto object-cover "
+          src={BG_URL}
           alt="bg-img"
         />
       </div>
       <form
-        className="absolute p-12 bg-gray-900 opacity-80 w-3/12 my-36 mx-auto left-0 right-0 text-white"
+        className="fixed p-12 bg-gray-900 opacity-80 w-full md:w-3/12 my-32 mx-auto left-0 right-0 text-white"
         onSubmit={(e) => e.preventDefault()}
       >
         <h2 className=" p-2 my-2 font-bold text-3xl">
@@ -125,14 +127,6 @@ const Login = () => {
           placeholder="Enter Your Password"
           className=" p-2 m-2 w-full bg-gray-700"
         />
-
-        {!signIn && (
-          <input
-            type="password"
-            placeholder="Re-enter Your Password"
-            className="pl-3 p-2 m-2 w-full bg-gray-700"
-          />
-        )}
         <p className="text-red-500 font-bold text-lg py-2 ml-3">
           {errorMessage}
         </p>
