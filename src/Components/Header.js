@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../Utlis/userSlice";
 import { toggleGptSearchView, addGptMovieResult } from "../Utlis/gptSlice";
-import { FiLogOut } from "react-icons/fi";
+import { FiLogOut ,FiSearch } from "react-icons/fi";
 import { changeLanguage } from "../Utlis/configSlice";
 
 const Header = () => {
@@ -83,7 +83,7 @@ const Header = () => {
             className="px-2 mb-2 bg-purple-600 text-white rounded-lg mr-2"
             onClick={handleGptSearchClick}
           >
-            {showGptSearch ? "Browse" : "GPT-Search"}
+            {showGptSearch ? "Browse" : "GPT-Search"} <FiSearch className="inline"/>
           </button>
           <img alt="usericon" className="hidden md:block w-9 h-9 mr-2 rounded-lg mb-2" src={USER_AVATAR} />
           <button
