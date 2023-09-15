@@ -7,8 +7,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZjA5ZTZkNGI2YjkyZTcyYzdmZmVlYTA4MzYwMTgxYSIsInN1YiI6IjY0Zjc3NWI4ZmZjOWRlMDExYmU4ZjVkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KKs7zNAQtmdomW8zIT-5ylZI7GtO4gM5ian2feV6cgM",
+    Authorization:`Bearer ${process.env.REACT_APP_AUTHORIZATION_TOKEN}`,
   },
 };
 
@@ -24,3 +23,4 @@ export const SUPPORTED_LANG = [
 ];
 
 export const OPEN_AI =  process.env.REACT_APP_OPEN_AI ;
+export const authorizationToken = process.env.REACT_APP_AUTHORIZATION_TOKEN;
