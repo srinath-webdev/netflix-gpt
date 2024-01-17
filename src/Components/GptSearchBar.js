@@ -4,14 +4,15 @@ import gptSearchMovieTmdb from "../Hooks/useGptSearchMovieTmdb";
 import { useRef } from "react";
 import openai from "../Utlis/OpenAi";
 import { addGptMovieResult } from "../Utlis/gptSlice";
-
 const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
   const dispatch = useDispatch();
   gptSearchMovieTmdb();
+ 
 
   const handleGptSearchClick = async () => {
+   
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
       searchText.current.value +
@@ -42,7 +43,7 @@ const GptSearchBar = () => {
 
     const tmdbResults = await Promise.all(promiseArray);
 
-    console.log(tmdbResults);
+   
 
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults })
@@ -68,6 +69,8 @@ const GptSearchBar = () => {
           {lang[langKey].search}
         </button>
       </form>
+
+
     </div>
   );
 };

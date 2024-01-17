@@ -1,6 +1,15 @@
 import React from 'react'
 import { IMG_CDN_URL } from '../Utlis/Constant'
 import { Link } from "react-router-dom";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import { Navigation } from 'swiper/modules';
 const MovieCards = ({posterPath , id}) => {
   if(!posterPath) return null;
   return (
@@ -10,6 +19,8 @@ const MovieCards = ({posterPath , id}) => {
       </Link>
         
     </div>
+
+    
   )
 }
 

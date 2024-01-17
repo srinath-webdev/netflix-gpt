@@ -26,6 +26,7 @@ const useNowPlayingMovies = () => {
       //if the redux store already have data then useeffect is not need for every render , if it is null then it will render
       !nowPlayingMovies && getNowPlayingMovies();
     },
+    
     //eslint-disable-next-line
     []
   );
